@@ -1,0 +1,237 @@
+:root {
+    --red-primary: #881515;
+    --red-dark: #7f0000;
+    --gray-light: #f9f9f9;
+    --text-dark: #222;
+    --text-light: #fff;
+}
+
+/* Layout */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    background: var(--gray-light);
+    display: flex; 
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    padding: 2rem 1rem;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+/* Navbar */
+.navbar {
+    background: var(--red-primary);
+    border-radius: 0;
+    padding: .5rem 1rem;
+    position: relative;
+    /* necessário para o posicionamento da busca */
+}
+
+.navbar-brand {
+    color: var(--text-light) !important;
+    font-weight: 700;
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-light) !important;
+    transition: .2s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ff5252 !important;
+}
+
+.navbar-toggler {
+    border: none;
+    border-radius: 0;
+}
+
+/* Barra de busca centralizada */
+.search-form {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 400px;
+    width: 100%;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.35rem 2.5rem 0.35rem 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    background: #fff;
+    height: 38px;
+    outline: none;
+    /* remove a borda de foco do navegador */
+    box-shadow: none;
+    /* remove sombras padrão do Bootstrap */
+}
+
+.search-input:focus {
+    border-color: #ccc;
+    /* mantém a borda cinza ao focar */
+    box-shadow: none;
+    /* remove qualquer sombra ao focar */
+    outline: none;
+    /* remove o contorno azul padrão */
+}
+
+.btn-search {
+    position: absolute;
+    top: 50%;
+    right: 0.25rem;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: #888;
+}
+
+/* categorias */
+
+.section-header h1 {
+    font-size: 2rem;
+    color: var(--red-primary);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.section-header h1::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--red-primary);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+/* Botões de categorias */
+.btn-category {
+    margin: 0 0.3rem;
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--red-primary);
+    border-radius: 20px;
+    background: #fff;
+    color: var(--red-primary);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-category:hover,
+.btn-category.active {
+    background: var(--red-primary);
+    color: #fff;
+}
+
+
+/* Cards */
+.card {
+    border-radius: 0;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+    display: flex;
+    flex-direction: column;
+    transition: .2s;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.card-description {
+    font-size: .9rem;
+    color: #555;
+}
+
+.card-text {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #7e1e1e;
+}
+
+/* Botões */
+.btn-comprar {
+    flex: 9;
+    background: #fff;
+    color: var(--red-primary);
+    border: 1px solid var(--red-primary);
+    border-radius: 0;
+    height: 42px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .2s;
+}
+
+.btn-comprar:hover {
+    background: var(--red-primary);
+    color: #fff;
+}
+
+.btn-carrinho {
+    flex: 1;
+    background: #e0e0e0;
+    color: #555;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .2s;
+}
+
+.btn-carrinho img {
+    width: 22px;
+    height: 22px;
+}
+
+.btn-carrinho:hover {
+    background: #b0b0b0;
+    color: #fff;
+}
+
+/* Footer */
+footer {
+    flex-shrink: 0;
+    background: var(--red-primary);
+    color: var(--text-light);
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, .1);
+}
