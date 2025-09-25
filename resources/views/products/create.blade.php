@@ -39,7 +39,7 @@
 
                     <div class="col-md-6">
                         <label class="form-label fw-bold text-red-primary">Código de Barras</label>
-                        <input type="text" class="form-control" name="barcode">
+                        <input type="number" class="form-control" name="barcode">
                     </div>
                 </div>
 
@@ -82,11 +82,11 @@
                 <div class="row g-3 mt-3">
                     <div class="col-md-6">
                         <label class="form-label fw-bold text-red-primary">Observação</label>
-                        <textarea class="form-control" name="notes" rows="2"></textarea>
+                        <textarea class="form-control" name="observation"></textarea>
                     </div>
                     <div class="col-md-6">
                         <label class="form-label fw-bold text-red-primary">Informações Adicionais</label>
-                        <textarea class="form-control" name="additional_info" rows="2"></textarea>
+                        <textarea class="form-control" name="add_info"></textarea>
                     </div>
                 </div>
             </div>
