@@ -54,9 +54,7 @@ main {
 
 /* Barra de busca centralizada */
 .search-form {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(0%);
     max-width: 400px;
     width: 100%;
 }
