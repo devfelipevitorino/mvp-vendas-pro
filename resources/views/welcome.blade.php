@@ -3,8 +3,17 @@
 @section('title', 'VendasPro')
 
 @section('content')
+
 <div class="section-header text-center mb-5">
     <h1 class="fw-bold">Produtos em Destaque</h1>
+
+    <form class="search-form d-none d-lg-flex mx-auto mt-3">
+        <input type="text" class="search-input" name="search" placeholder="Buscar produtos...">
+        <button type="submit" class="btn-search">
+            <i class="bi bi-search"></i>
+        </button>
+    </form>
+
     <div class="categories d-flex justify-content-center mt-3">
         <button class="btn btn-category active">Todos</button>
         <button class="btn btn-category">Eletrônicos</button>
@@ -13,12 +22,13 @@
     </div>
 </div>
 
+
 <div class="row g-3">
     @foreach ($products as $product)
     <div class="col-6 col-md-4 col-lg-3">
         <div class="card h-100 shadow-sm p-2">
             @if($product->image)
-            <img src="/image/events/{{ $product->image }}"
+            <img src="/image/products/{{ $product->image }}"
                 class="card-img-top"
                 alt="{{ $product->name }}">
             @else
