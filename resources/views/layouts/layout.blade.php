@@ -30,14 +30,6 @@
             <!-- Logo -->
             <a class="navbar-brand" href="/">VendasPro</a>
 
-            <!-- Barra de busca -->
-            <form class="search-form d-none d-lg-flex mx-3">
-                <input type="text" class="search-input" name="search" placeholder="Buscar produtos...">
-                <button type="submit" class="btn-search">
-                    <i class="bi bi-search"></i>
-                </button>
-            </form>
-
             <!-- Login / Cadastro -->
             <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
                 <ul class="navbar-nav mb-2 mb-lg-0">
