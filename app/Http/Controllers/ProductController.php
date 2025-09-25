@@ -24,8 +24,8 @@ class ProductController extends Controller
 
     public function create()
     {
-        $lastId = Product::max('id');       
-        $nextId = $lastId ? $lastId + 1 : 1; 
+        $lastId = Product::max('id');
+        $nextId = $lastId ? $lastId + 1 : 1;
 
         return view('products.create', ['nextId' => $nextId]);
     }
@@ -36,9 +36,14 @@ class ProductController extends Controller
 
         $product = new Product();
 
+        $product->reference = $request->reference;
+        $product->barcode = $request->barcode;
         $product->name = $request->name;
-        $product->description = $request->description;
         $product->price = $request->price;
+        $product->stock_quantity = $request->stock;
+        $product->add_info = $request->add_info;
+        $product->observation = $request->observation;
+        $product->description = $request->description;
 
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
             $requestImage = $request->image;
