@@ -24,8 +24,9 @@ class ProductController extends Controller
 
     public function create()
     {
-        $lastId = Product::max('id');
-        $nextId = $lastId ? $lastId + 1 : 1;
+        $user = auth()->user();
+        $lastProduct = $user->products()->orderBy('id', 'desc')->first();
+        $nextId = $lastProduct ? $lastProduct->id + 1 : 1;
 
         return view('products.create', ['nextId' => $nextId]);
     }
