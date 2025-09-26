@@ -2,19 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
-
-
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
+use App\Http\Controllers\UserController;
 
 Route::get('/', [ProductController::class, 'welcome']);
 
 Route::post('/products', [ProductController::class, 'store'])->middleware('auth');
 Route::get('/products/create', [ProductController::class, 'create'])->middleware('auth');
+
+Route::get('/dashboard', [UserController::class, 'dashboard'])->middleware('auth');

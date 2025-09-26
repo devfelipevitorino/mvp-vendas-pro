@@ -33,12 +33,29 @@
             <!-- Login / Cadastro -->
             <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
                 <ul class="navbar-nav mb-2 mb-lg-0">
+                    @auth
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <a class="nav-link" href="{{ route('logout') }}"
+                                onclick="event.preventDefault(); this.closest('form').submit();">
+                                Sair
+                            </a>
+                        </form>
+                    </li>
+
+                    @endauth
+                    @guest
                     <li class="nav-item">
                         <a class="nav-link" href="/login">Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/register">Cadastrar</a>
                     </li>
+                    @endguest
                 </ul>
             </div>
         </div>

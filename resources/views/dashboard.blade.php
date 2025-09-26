@@ -1,15 +1,40 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+@extends('layouts.layout')
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <x-welcome />
-            </div>
+@section('title', 'Dashboard - VendasPro')
+
+@section('content')
+
+<div class="section-header text-center mb-5">
+    <h1 class="fw-bold">Olá, {{ Auth::user()->name }}</h1>
+    <p class="text-muted">Bem-vindo ao seu painel de controle</p>
+</div>
+
+<h2 class="fw-bold mb-3">Produtos Recentes</h2>
+
+@forelse($products as $product)
+<div class="col-6 col-md-4 col-lg-3">
+    <div class="card h-100 shadow-sm p-2">
+        @if($product->image)
+        <img src="/image/products/{{ $product->image }}" class="card-img-top" alt="{{ $product->name }}">
+        @else
+        <img src="https://www.svgrepo.com/show/508699/landscape-placeholder.svg" class="card-img-top" alt="{{ $product->name }}">
+        @endif
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title text-center">{{ $product->name }}</h5>
+            <p class="card-description text-truncate mb-2" style="font-size:0.85rem;">
+                {{ $product->description }}
+            </p>
+            <p class="card-text text-success fw-bold text-center mb-2">
+                R$ {{ $product->price }}
+            </p>
         </div>
     </div>
-</x-app-layout>
+</div>
+@empty
+<div class="text-center my-5">
+    <h3>Você ainda não possui produtos cadastrados.</h3>
+    <a href="/products/create" class="btn btn-comprar flex-grow-1">Cadastrar Produto</a>
+</div>
+@endforelse
+
+@endsection
