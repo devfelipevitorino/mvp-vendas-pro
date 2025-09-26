@@ -33,13 +33,13 @@
 
                     <div class="col-md-4">
                         <label class="form-label fw-bold text-red-primary">Referência</label>
-                        <input type="text" class="form-control" name="reference" placeholder="Ex: 900000000004">
+                        <input type="text" class="form-control" name="reference" placeholder="Ex: 900000000004" required>
                     </div>
 
 
                     <div class="col-md-6">
                         <label class="form-label fw-bold text-red-primary">Código de Barras</label>
-                        <input type="number" class="form-control" name="barcode">
+                        <input type="number" class="form-control" name="barcode" required>
                     </div>
                 </div>
 
@@ -65,18 +65,23 @@
                 <div class="row g-3 align-items-end mt-2">
                     <div class="col-md-3">
                         <label class="form-label fw-bold text-red-primary">Preço (R$)</label>
-                        <input type="number" class="form-control" step="0.01" name="price" placeholder="Ex: 199,99">
+                        <input type="number" class="form-control" step="0.01" name="price" placeholder="Ex: 199,99" required>
                     </div>
 
                     <div class="col-md-3">
                         <label class="form-label fw-bold text-red-primary">Quantidade em Estoque</label>
-                        <input type="number" class="form-control" name="stock" placeholder="Ex: 10">
+                        <input type="number" class="form-control" name="stock" placeholder="Ex: 10" required>
                     </div>
 
                     <div class="col-md-6">
                         <label class="form-label fw-bold text-red-primary">Fabricante</label>
-                        <input type="text" class="form-control" name="manufacturer" placeholder="Fabricante">
+                        <input type="text" class="form-control" name="manufacturer" placeholder="Fabricante" required>
                     </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="image" class="form-label fw-bold">Imagem do Evento</label>
+                    <input type="file" class="form-control" id="image" name="image" required>
                 </div>
 
                 <div class="row g-3 mt-3">
