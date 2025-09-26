@@ -57,8 +57,8 @@ class ProductController extends Controller
             $product->image = $imageName;
         }
 
-        //$user = Auth::user();
-        //$product->user_id = $user->id;
+        $user = Auth::user();
+        $product->user_id = $user->id;
 
         $product->save();
 
