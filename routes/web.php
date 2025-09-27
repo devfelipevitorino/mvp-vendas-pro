@@ -13,6 +13,7 @@ Route::get('/dashboard', [UserController::class, 'dashboard'])->middleware('auth
 
 Route::post('/products', [ProductController::class, 'store'])->middleware('auth');
 Route::get('/products/create', [ProductController::class, 'create'])->middleware('auth');
+Route::get('/products/list', [ProductController::class, 'list'])->middleware('auth');
 
 Route::post('/category', [CategoryController::class, 'store'])->middleware('auth');
 Route::get('/category/create', [CategoryController::class, 'create'])->middleware('auth');
