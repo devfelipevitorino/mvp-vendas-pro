@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     public function welcome()
-    {        
+    {
         $search = request('search');
         if ($search) {
             $products = Product::where([
@@ -28,8 +28,9 @@ class ProductController extends Controller
         $nextId = $lastProduct ? $lastProduct->id + 1 : 1;
 
         $categories = $user->categories()->orderBy('name')->get();
+        $suppliers = $user->suppliers()->orderBy('name')->get();
 
-        return view('products.create', ['nextId' => $nextId, 'categories' => $categories]);
+        return view('products.create', ['nextId' => $nextId, 'categories' => $categories, 'suppliers' => $suppliers]);
     }
 
 
@@ -47,7 +48,7 @@ class ProductController extends Controller
         $product->observation = $request->observation;
         $product->description = $request->description;
         $product->category_id = $request->category;
-        
+
 
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
             $requestImage = $request->image;
