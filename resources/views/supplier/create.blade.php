@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 
-@section('title', 'Cadastrar Categoria')
+@section('title', 'Cadastrar Fornecedor')
 
 @section('content')
 
@@ -18,7 +18,7 @@
     <div class="card p-4" style="border-radius: 0; box-shadow: 0 4px 12px rgba(0,0,0,.05);">
         <h4 class="mb-4 text-red-primary">Fornecedor - Novo Cadastro</h4>
 
-        <form action="/category" method="POST" enctype="multipart/form-data">
+        <form action="/suppliers" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="mb-4">
@@ -34,11 +34,11 @@
 
                     <div class="col-md-8">
                         <label class="form-label fw-bold text-red-primary">Nome</label>
-                        <input type="text" class="form-control" name="name" placeholder="Ex: Móveis" required>
+                        <input type="text" class="form-control" name="name" placeholder="Informe o nome do fornecedor" required>
                     </div>
 
                     <div class="mt-4">
-                        <button type="submit" class="btn btn-comprar">Criar Categoria</button>
+                        <button type="submit" class="btn btn-comprar">Cadastrar Fornecedor</button>
                     </div>
         </form>
     </div>

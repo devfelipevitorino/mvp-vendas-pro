@@ -77,9 +77,16 @@
                         <input type="number" class="form-control" name="stock" placeholder="Ex: 10" required>
                     </div>
 
-                    <div class="col-md-6">
-                        <label class="form-label fw-bold text-red-primary">Fabricante</label>
-                        <input type="text" class="form-control" name="manufacturer" placeholder="Fabricante" required>
+                    <div class="col-md-4">
+                        <label class="form-label fw-bold text-red-primary">Fornecedor</label>
+                        <select class="form-select" name="supplier_id">
+                            <option value="">Selecione</option>
+                            @foreach($suppliers as $supplier)
+                            <option value="{{ $supplier->id }}">
+                                {{ $supplier->name }}
+                            </option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
 
