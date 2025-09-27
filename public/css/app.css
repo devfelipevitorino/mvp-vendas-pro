@@ -13,8 +13,33 @@ body {
     margin: 0;
     font-family: 'Nunito', sans-serif;
     background: var(--gray-light);
-    display: flex; 
+    display: flex;
     flex-direction: column;
+}
+
+#wrapper {
+    display: flex;
+    flex: 1;
+    transition: all 0.3s ease;
+}
+
+#sidebar-wrapper {
+    min-width: 250px;
+    max-width: 250px;
+    margin-left: -250px;
+    transition: all 0.3s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    transition: all 0.3s ease;
 }
 
 main {
@@ -26,11 +51,12 @@ main {
 
 /* Navbar */
 .navbar {
-    background: var(--red-primary);
+    background: var(--red-dark);
     border-radius: 0;
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
     position: relative;
-    /* necessário para o posicionamento da busca */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10;
 }
 
 .navbar-brand {
@@ -40,16 +66,32 @@ main {
 
 .navbar-nav .nav-link {
     color: var(--text-light) !important;
-    transition: .2s;
+    transition: 0.2s;
 }
 
 .navbar-nav .nav-link:hover {
-    color: #ff5252 !important;
+    color: var(--text-light) !important;
 }
 
 .navbar-toggler {
     border: none;
     border-radius: 0;
+}
+
+/* Sidebar */
+#sidebar-wrapper {
+    background: #fff;
+    border-right: 1px solid #ddd;
+}
+
+.list-group-item {
+    border: none;
+    padding: 0.75rem 1.25rem;
+}
+
+.list-group-item:hover {
+    background: var(--red-primary);
+    color: var(--text-light);
 }
 
 /* Barra de busca centralizada */
@@ -67,18 +109,13 @@ main {
     background: #fff;
     height: 38px;
     outline: none;
-    /* remove a borda de foco do navegador */
     box-shadow: none;
-    /* remove sombras padrão do Bootstrap */
 }
 
 .search-input:focus {
     border-color: #ccc;
-    /* mantém a borda cinza ao focar */
     box-shadow: none;
-    /* remove qualquer sombra ao focar */
     outline: none;
-    /* remove o contorno azul padrão */
 }
 
 .btn-search {
@@ -96,7 +133,6 @@ main {
 }
 
 /* categorias */
-
 .section-header h1 {
     font-size: 2rem;
     color: var(--red-primary);
@@ -231,5 +267,6 @@ footer {
     color: var(--text-light);
     padding: 20px 0;
     text-align: center;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, .1);
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
