@@ -15,6 +15,7 @@
 </style>
 
 <div class="container-fluid my-4">
+    <a href="/dashboard" class=" btn btn-secondary mb-3">Voltar</a>
     <div class="card p-4" style="border-radius: 0; box-shadow: 0 4px 12px rgba(0,0,0,.05);">
         <h4 class="mb-4 text-red-primary">Produto - Novo Cadastro</h4>
 
