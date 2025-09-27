@@ -7,21 +7,7 @@
 <div class="section-header text-center mb-5">
     <h1 class="fw-bold">Olá, {{ Auth::user()->name }}</h1>
     <p class="text-muted">Bem-vindo ao seu painel de controle</p>
-
-    <h2 class="fw-bold mb-3">Área de Cadastros</h2>
-    <div class="mb-3">
-        <a href="/products/create" class="btn btn-comprar btn-lg">
-            Cadastrar Novo Produto
-        </a>
-    </div>
-
-    <div class="d-flex justify-content-center gap-2">
-        <a href="/category/create" class="btn btn-secondary">Categorias</a>
-        <a href="/suppliers/create" class="btn btn-secondary">Fornecedores</a>
-        <a href="/clients/create" class="btn btn-secondary">Clientes</a>
-    </div>
 </div>
-
 
 <h2 class="fw-bold mb-3">Produtos Recentes</h2>
 
