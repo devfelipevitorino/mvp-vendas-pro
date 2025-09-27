@@ -10,7 +10,7 @@ class CategoryController extends Controller
     public function create()
     {
         $user = auth()->user();
-        $lastCategory = $user->products()->orderBy('id', 'desc')->first();
+        $lastCategory = $user->categories()->orderBy('id', 'desc')->first();
         $nextId = $lastCategory ? $lastCategory->id + 1 : 1;
 
         return view('category.create', ['nextId' => $nextId]);
@@ -25,6 +25,6 @@ class CategoryController extends Controller
         $category->user_id = $user->id;
         $category->save();
 
-        return redirect('/products/create');
+        return redirect('/dashboard');
     }
 }

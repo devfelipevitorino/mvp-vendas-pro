@@ -14,6 +14,18 @@
     }
 </style>
 
+<div class="section-header text-center mb-5">
+    <h1 class="fw-bold">Olá, {{ Auth::user()->name }}</h1>
+    <p class="text-muted">Abaixo você pode acessar outras áreas de cadastro</p>
+
+    <div class="d-flex justify-content-center gap-2">
+        <a href="/category/create" class="btn btn-secondary">Categorias</a>
+        <a href="/suppliers/create" class="btn btn-secondary">Fornecedores</a>
+        <a href="/clients/create" class="btn btn-secondary">Clientes</a>
+    </div>
+</div>
+
+
 <div class="container-fluid my-4">
     <div class="card p-4" style="border-radius: 0; box-shadow: 0 4px 12px rgba(0,0,0,.05);">
         <h4 class="mb-4 text-red-primary">Produto - Novo Cadastro</h4>
@@ -54,6 +66,7 @@
                     <div class="col-md-4">
                         <label class="form-label fw-bold text-red-primary">Categoria</label>
                         <select class="form-select" name="category" required>
+                            <option value="">Selecione</option>
                             @foreach($categories as $category)
                             <option value="{{ $category->id }}"
                                 {{ isset($product) && $product->category_id == $category->id ? 'selected' : '' }}>

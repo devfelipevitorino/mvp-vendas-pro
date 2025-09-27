@@ -25,6 +25,6 @@ class SupplierController extends Controller
         $supplier->user_id = $user->id;
         $supplier->save();
 
-        return redirect('/products/create');
+        return redirect('/dashboard');
     }
 }
