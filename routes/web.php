@@ -5,6 +5,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\ClientController;
 
 Route::get('/', [ProductController::class, 'welcome']);
 
@@ -18,3 +19,6 @@ Route::get('/category/create', [CategoryController::class, 'create'])->middlewar
 
 Route::post('/suppliers', [SupplierController::class, 'store'])->middleware('auth');
 Route::get('/suppliers/create', [SupplierController::class, 'create'])->middleware('auth');
+
+Route::post('clients', [ClientController::class, 'store'])->middleware('auth');
+Route::get('clients/create', [ClientController::class, 'create'])->middleware('auth');
