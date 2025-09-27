@@ -69,4 +69,10 @@ class ProductController extends Controller
 
         return redirect('/');
     }
+
+    public function list()
+    {
+        $products = Product::all();
+        return view('products.list', compact('products'));
+    }
 }
