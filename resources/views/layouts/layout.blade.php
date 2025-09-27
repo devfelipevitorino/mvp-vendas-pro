@@ -19,7 +19,7 @@
 
 <body>
     <div id="wrapper" class="d-flex">
-
+        @auth
         <!-- Sidebar -->
         <div class="border-end bg-white" id="sidebar-wrapper">
             <div class="sidebar-heading border-bottom py-4 px-3">
@@ -48,6 +48,19 @@
                 </div>
             </div>
         </div>
+        @endauth
+        @guest
+        <div class="border-end bg-white" id="sidebar-wrapper">
+            <div class="sidebar-heading border-bottom py-4 px-3">
+                <strong>VendasPro</strong>
+            </div>
+            <div class="p-3">
+                <p>Faça login para ter acesso!</p>
+                <a href="/login" class="btn btn-comprar  w-100">Login</a>
+            </div>
+        </div>
+        @endguest
+
 
 
         <div id="page-content-wrapper" class="w-100">
