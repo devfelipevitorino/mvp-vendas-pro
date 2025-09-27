@@ -9,7 +9,7 @@
     <p class="text-muted">Bem-vindo ao seu painel de controle</p>
 </div>
 
-<h2 class="fw-bold mb-3">Produtos Recentes</h2>
+<h2 class="fw-bold mb-3 text-center">Produtos Recentes</h2>
 
 @if($products->count())
 <div class="row g-3">
