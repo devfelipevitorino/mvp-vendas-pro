@@ -54,12 +54,16 @@
                     <div class="col-md-4">
                         <label class="form-label fw-bold text-red-primary">Categoria</label>
                         <select class="form-select" name="category" required>
-                            <option value="">Selecione</option>
-                            <option value="calcados">Calçados</option>
-                            <option value="eletronicos">Eletrônicos</option>
-                            <option value="moveis">Móveis</option>
+                            @foreach($categories as $category)
+                            <option value="{{ $category->id }}"
+                                {{ isset($product) && $product->category_id == $category->id ? 'selected' : '' }}>
+                                {{ $category->name }}
+                            </option>
+                            @endforeach
                         </select>
+
                     </div>
+
                 </div>
 
                 <div class="row g-3 align-items-end mt-2">

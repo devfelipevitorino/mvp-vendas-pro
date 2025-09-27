@@ -28,7 +28,9 @@ class ProductController extends Controller
         $lastProduct = $user->products()->orderBy('id', 'desc')->first();
         $nextId = $lastProduct ? $lastProduct->id + 1 : 1;
 
-        return view('products.create', ['nextId' => $nextId]);
+        $categories = $user->categories()->orderBy('name')->get();
+
+        return view('products.create', ['nextId' => $nextId, 'categories' => $categories]);
     }
 
 
@@ -45,6 +47,8 @@ class ProductController extends Controller
         $product->add_info = $request->add_info;
         $product->observation = $request->observation;
         $product->description = $request->description;
+        $product->category_id = $request->category;
+        
 
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
             $requestImage = $request->image;
