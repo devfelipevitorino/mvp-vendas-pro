@@ -9,9 +9,8 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     public function welcome()
-    {
+    {        
         $search = request('search');
-
         if ($search) {
             $products = Product::where([
                 ['name', 'like', '%' . $search . '%']
