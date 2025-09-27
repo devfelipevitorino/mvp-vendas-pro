@@ -34,6 +34,7 @@
                 </a>
                 <div class="collapse" id="cadastrosSubmenu" data-bs-parent="#sidebarAccordion">
                     <a href="/products/create" class="list-group-item list-group-item-action ps-5">Produtos</a>
+                    <a href="/category/create" class="list-group-item list-group-item-action ps-5">Categorias</a>
                     <a href="/suppliers/create" class="list-group-item list-group-item-action ps-5">Fornecedores</a>
                     <a href="/clients/create" class="list-group-item list-group-item-action ps-5">Clientes</a>
                 </div>
@@ -42,9 +43,10 @@
                     Listagem <i class="bi bi-caret-down-fill float-end"></i>
                 </a>
                 <div class="collapse" id="listagemSubmenu" data-bs-parent="#sidebarAccordion">
-                    <a href="/dashboard/products" class="list-group-item list-group-item-action ps-5">Produtos</a>
-                    <a href="/dashboard/suppliers" class="list-group-item list-group-item-action ps-5">Fornecedores</a>
-                    <a href="/dashboard/clients" class="list-group-item list-group-item-action ps-5">Clientes</a>
+                    <a href="/products/list" class="list-group-item list-group-item-action ps-5">Produtos</a>
+                    <a href="/category/list" class="list-group-item list-group-item-action ps-5">Categorias</a>
+                    <a href="/suppliers/list" class="list-group-item list-group-item-action ps-5">Fornecedores</a>
+                    <a href="/clients/list" class="list-group-item list-group-item-action ps-5">Clientes</a>
                 </div>
             </div>
         </div>
