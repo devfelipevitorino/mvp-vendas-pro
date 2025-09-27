@@ -14,67 +14,94 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
+    <div id="wrapper" class="d-flex">
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container d-flex align-items-center justify-content-between">
+        <!-- Sidebar -->
+        <div class="border-end bg-white" id="sidebar-wrapper">
+            <div class="sidebar-heading border-bottom py-4 px-3">
+                <strong>VendasPro</strong>
+            </div>
 
-            <!-- Hamburger menu -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
-                aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <div class="list-group list-group-flush" id="sidebarAccordion">
+                <a href="/dashboard" class="list-group-item list-group-item-action">Dashboard</a>
 
-            <!-- Logo -->
-            <a class="navbar-brand" href="/">VendasPro</a>
+                <a class="list-group-item list-group-item-action" data-bs-toggle="collapse" href="#cadastrosSubmenu" role="button" aria-expanded="false" aria-controls="cadastrosSubmenu">
+                    Cadastros <i class="bi bi-caret-down-fill float-end"></i>
+                </a>
+                <div class="collapse" id="cadastrosSubmenu" data-bs-parent="#sidebarAccordion">
+                    <a href="/products/create" class="list-group-item list-group-item-action ps-5">Produtos</a>
+                    <a href="/suppliers/create" class="list-group-item list-group-item-action ps-5">Fornecedores</a>
+                    <a href="/clients/create" class="list-group-item list-group-item-action ps-5">Clientes</a>
+                </div>
 
-            <!-- Login / Cadastro -->
-            <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
-                <ul class="navbar-nav mb-2 mb-lg-0">
-                    @auth
-                    <li class="nav-item">
-                        <a class="nav-link" href="/dashboard">Perfil</a>
-                    </li>
-                    <li class="nav-item">
-                        <form action="{{ route('logout') }}" method="POST">
-                            @csrf
-                            <a class="nav-link" href="{{ route('logout') }}"
-                                onclick="event.preventDefault(); this.closest('form').submit();">
-                                Sair
-                            </a>
-                        </form>
-                    </li>
-
-                    @endauth
-                    @guest
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/register">Cadastrar</a>
-                    </li>
-                    @endguest
-                </ul>
+                <a class="list-group-item list-group-item-action" data-bs-toggle="collapse" href="#listagemSubmenu" role="button" aria-expanded="false" aria-controls="listagemSubmenu">
+                    Listagem <i class="bi bi-caret-down-fill float-end"></i>
+                </a>
+                <div class="collapse" id="listagemSubmenu" data-bs-parent="#sidebarAccordion">
+                    <a href="/dashboard/products" class="list-group-item list-group-item-action ps-5">Produtos</a>
+                    <a href="/dashboard/suppliers" class="list-group-item list-group-item-action ps-5">Fornecedores</a>
+                    <a href="/dashboard/clients" class="list-group-item list-group-item-action ps-5">Clientes</a>
+                </div>
             </div>
         </div>
-    </nav>
 
-    <!-- Conteúdo principal -->
-    <main class="container my-5">
-        @yield('content')
-    </main>
 
-    <!-- Footer -->
-    <footer class="footer text-center">
-        <div class="container">
-            <p>&copy; {{ date('Y') }} Marketplace. Todos os direitos reservados.</p>
+        <div id="page-content-wrapper" class="w-100">
+
+            <nav class="navbar navbar-expand-lg navbar-dark border-bottom">
+                <div class="container-fluid">
+                    <button class="btn btn-light" id="sidebarToggle">
+                        <i class="bi bi-list"></i>
+                    </button>
+                    <a class="navbar-brand ms-3" href="/">VendasPro</a>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
+                        <ul class="navbar-nav mb-2 mb-lg-0">
+                            @auth
+                            <li class="nav-item">
+                                <a class="nav-link" href="/dashboard">Perfil</a>
+                            </li>
+                            <li class="nav-item">
+                                <form action="{{ route('logout') }}" method="POST">
+                                    @csrf
+                                    <a class="nav-link" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault(); this.closest('form').submit();">
+                                        Sair
+                                    </a>
+                                </form>
+                            </li>
+                            @endauth
+                            @guest
+                            <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/register">Cadastrar</a></li>
+                            @endguest
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <main class="container my-5">
+                @yield('content')
+            </main>
+
+            <footer class="footer text-center">
+                <div class="container">
+                    <p>&copy; {{ date('Y') }} Marketplace. Todos os direitos reservados.</p>
+                </div>
+            </footer>
         </div>
-    </footer>
+    </div>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.getElementById('sidebarToggle').addEventListener('click', function() {
+            document.getElementById('wrapper').classList.toggle('toggled');
+        });
+    </script>
 </body>
 
 </html>
