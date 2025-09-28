@@ -27,4 +27,13 @@ class SupplierController extends Controller
 
         return redirect('/dashboard');
     }
+
+    public function list()
+    {
+        $user = auth()->user();
+
+        $suppliers = Supplier::where('user_id', $user->id)->get();
+
+        return view('supplier.list', compact('suppliers'));
+    }
 }
