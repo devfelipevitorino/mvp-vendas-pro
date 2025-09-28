@@ -27,4 +27,13 @@ class CategoryController extends Controller
 
         return redirect('/dashboard');
     }
+
+    public function list()
+    {
+        $user = auth()->user();
+        $categories = Category::where('user_id', $user->id)
+            ->get();
+
+        return view('category.list', compact('categories'));
+    }
 }
