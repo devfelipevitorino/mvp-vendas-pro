@@ -8,13 +8,29 @@ use App\Models\Supplier;
 class Product extends Model
 {
 
-    protected $casts = [
-        'category' => 'array'
+    protected $fillable = [
+        'reference',
+        'barcode',
+        'name',
+        'price',
+        'stock_quantity',
+        'add_info',
+        'observation',
+        'description',
+        'image',
+        'category_id',
+        'supplier_id',
+        'user_id',
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'category_id');
     }
 
     public function suppliers()
