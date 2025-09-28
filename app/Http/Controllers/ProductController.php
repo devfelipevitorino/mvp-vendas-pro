@@ -73,7 +73,10 @@ class ProductController extends Controller
 
     public function list()
     {
-        $products = Product::all();
+        $user = auth()->user();
+        $products = Product::where('user_id', $user->id)
+            ->get();
+
         return view('products.list', compact('products'));
     }
 }
