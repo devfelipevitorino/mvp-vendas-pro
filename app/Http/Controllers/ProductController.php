@@ -48,6 +48,7 @@ class ProductController extends Controller
         $product->observation = $request->observation;
         $product->description = $request->description;
         $product->category_id = $request->category;
+        $product->supplier_id = $request->supplier_id;
 
 
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
