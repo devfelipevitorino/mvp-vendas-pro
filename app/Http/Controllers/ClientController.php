@@ -27,4 +27,14 @@ class ClientController extends Controller
 
         return redirect('/dashboard');
     }
+
+
+    public function list()
+    {
+        $user = auth()->user();
+
+        $clients = Client::Where('user_id', $user->id)->get();
+
+        return view('clients.list', compact('clients'));
+    }
 }
