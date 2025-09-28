@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="container my-4">
-    <h3 class="mb-4">Categorias</h3>
+    <h3 class="mb-4">Clientes</h3>
 
     <div class="list-group">
         @forelse($clients as $client)
@@ -15,7 +15,7 @@
         </div>
         @empty
         <div class="list-group-item">
-            Nenhum   cliente cadastrado.
+            Nenhum cliente cadastrado.
         </div>
         @endforelse
     </div>

@@ -12,16 +12,16 @@
         <form action="/category" method="POST" enctype="multipart/form-data">
             @csrf
 
-            <div class="mb-4">
+            <div class="mb-2">
                 <h5 class="text-red-primary border-bottom pb-2">Dados Cadastrais</h5>
-                <div class="row g-3 align-items-end">
+                <div class="row g-2 align-items-end">
                     <div class="col-md-2">
                         <label class="form-label fw-bold text-red-primary">Código</label>
                         <input type="text" class="form-control" value="{{ $nextId }}" readonly>
                     </div>
                 </div>
 
-                <div class="row g-3 align-items-end mt-2">
+                <div class="row g-2 align-items-end mt-1">
                     <div class="col-md-8">
                         <label class="form-label fw-bold text-red-primary">Nome</label>
                         <input type="text" class="form-control" name="name" placeholder="Ex: Móveis" required>
