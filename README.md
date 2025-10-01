@@ -29,6 +29,9 @@ Este projeto funciona como um **MVP** para estudo e aprendizado, servindo como b
   
   ### Página de Detalhes
   ![Tela 3](https://github.com/user-attachments/assets/c1b2ab96-9e43-41ab-9e6a-34f2b1205605)
+
+  ### Página de Cadastro de Fornecedor
+  ![Tela 4](https://github.com/user-attachments/assets/1304e23c-0539-4a8c-ba02-7e6dac775df6)
   
 </details>
 
