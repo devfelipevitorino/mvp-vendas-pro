@@ -1,10 +1,10 @@
 @extends('layouts.layout')
 
-@section('title', 'Listagem de Categorias')
+@section('title', 'Listagem de Fornecedores')
 
 @section('content')
 <div class="container my-4">
-    <h3 class="mb-4">fornecedor</h3>
+    <h3 class="mb-4">Fornecedores</h3>
 
     <div class="list-group">
         @forelse($suppliers as $supplier)

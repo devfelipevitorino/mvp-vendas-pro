@@ -37,7 +37,7 @@
                     </div>
                     <div class="col-md-6">
                         <label class="form-label fw-bold text-red-primary">Telefone</label>
-                        <input type="text" class="form-control" name="phone" placeholder="(00) 0000-0000">
+                        <input type="number" class="form-control" name="phone" placeholder="(00) 0000-0000">
                     </div>
                 </div>
 
@@ -56,7 +56,7 @@
                 <div class="row g-3 align-items-end mt-2">
                     <div class="col-md-5">
                         <label class="form-label fw-bold text-red-primary">Bairro</label>
-                        <input type="text" class="form-control" name="district" placeholder="Informe o bairro">
+                        <input type="text" class="form-control" name="neighborhood" placeholder="Informe o bairro">
                     </div>
                     <div class="col-md-5">
                         <label class="form-label fw-bold text-red-primary">Cidade</label>
@@ -64,7 +64,7 @@
                     </div>
                     <div class="col-md-2">
                         <label class="form-label fw-bold text-red-primary">UF</label>
-                        <input type="text" class="form-control" name="state" maxlength="2" placeholder="UF">
+                        <input type="text" class="form-control" name="uf" maxlength="2" placeholder="UF">
                     </div>
                 </div>
 
