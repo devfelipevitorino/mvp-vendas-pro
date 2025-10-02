@@ -22,6 +22,15 @@ class SupplierController extends Controller
         $user = auth()->user();
 
         $supplier->name = $request->name;
+        $supplier->cnpj = $request->cnpj;
+        $supplier->email = $request->email;
+        $supplier->phone = $request->phone;
+        $supplier->address = $request->address;
+        $supplier->number_address = $request->number;
+        $supplier->neighborhood = $request->neighborhood;
+        $supplier->city = $request->city;
+        $supplier->uf = $request->uf;
+        $supplier->cep = $request->cep;
         $supplier->user_id = $user->id;
         $supplier->save();
 
