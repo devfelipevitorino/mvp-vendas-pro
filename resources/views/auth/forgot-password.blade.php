@@ -5,13 +5,13 @@
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+            {{ __('Esqueceu sua senha? Sem problema. Informe seu endereço de e-mail e enviaremos um link para redefinição de senha, onde você poderá escolher uma nova.') }}
         </div>
 
         @session('status')
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ $value }}
-            </div>
+        <div class="mb-4 font-medium text-sm text-green-600">
+            {{ $value }}
+        </div>
         @endsession
 
         <x-validation-errors class="mb-4" />
@@ -26,7 +26,7 @@
 
             <div class="flex items-center justify-end mt-4">
                 <x-button>
-                    {{ __('Email Password Reset Link') }}
+                    {{ __('Enviar link de redefinição de senha') }}
                 </x-button>
             </div>
         </form>
