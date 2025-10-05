@@ -11,10 +11,12 @@ class UserController extends Controller
     {
         $user = auth()->user();
         $products = $user->products;
+        $clientsCount = auth()->user()->clients()->count();
 
         return view('dashboard', [
             'user' => $user,
-            'products' => $products
+            'products' => $products,
+            'clientsCount' => $clientsCount
         ]);
     }
 }
