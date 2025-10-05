@@ -45,7 +45,7 @@
                 <div class="row g-3 align-items-end">
                     <div class="col-md-8">
                         <label class="form-label fw-bold text-red-primary">Logradouro</label>
-                        <input type="text" class="form-control" name="address" placeholder="Rua, Avenida, etc.">
+                        <input type="text" class="form-control" id="address" name="address" placeholder="Rua, Avenida, etc.">
                     </div>
                     <div class="col-md-4">
                         <label class="form-label fw-bold text-red-primary">Número</label>
@@ -56,22 +56,26 @@
                 <div class="row g-3 align-items-end mt-2">
                     <div class="col-md-5">
                         <label class="form-label fw-bold text-red-primary">Bairro</label>
-                        <input type="text" class="form-control" name="district" placeholder="Informe o bairro">
+                        <input type="text" class="form-control" id="neighborhood" name="neighborhood" placeholder="Informe o bairro">
                     </div>
                     <div class="col-md-5">
                         <label class="form-label fw-bold text-red-primary">Cidade</label>
-                        <input type="text" class="form-control" name="city" placeholder="Informe a cidade">
+                        <input type="text" class="form-control" id="city" name="city" placeholder="Informe a cidade">
                     </div>
                     <div class="col-md-2">
                         <label class="form-label fw-bold text-red-primary">UF</label>
-                        <input type="text" class="form-control" name="state" maxlength="2" placeholder="UF">
+                        <input type="text" class="form-control" id="uf" name="uf" maxlength="2" placeholder="UF">
                     </div>
                 </div>
 
                 <div class="row g-3 align-items-end mt-2">
                     <div class="col-md-3">
                         <label class="form-label fw-bold text-red-primary">CEP</label>
-                        <input type="text" class="form-control" name="cep" placeholder="00000-000">
+                        <input type="text" class="form-control" id="cep" name="cep" placeholder="00000-000">
+                    </div>
+
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-comprar w-90" onclick="buscarCep()">Buscar CEP</button>
                     </div>
                 </div>
 
@@ -82,4 +86,5 @@
         </form>
     </div>
 </div>
+<script src="{{ asset('js/cep.js') }}"></script>
 @endsection
