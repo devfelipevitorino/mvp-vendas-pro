@@ -17,7 +17,9 @@
         <div class="col-md-3 col-6">
             <div class="card shadow-sm border-0 rounded-3 p-3 text-center">
                 <h6 class="text-muted">Produtos</h6>
-                <h3 class="fw-bold">{{ $products->count() }}</h3>
+                <a style="text-decoration: none; color: black;" href="products/list">
+                    <h3 class="fw-bold">{{ $products->count() }}</h3>
+                </a>
             </div>
         </div>
         <div class="col-md-3 col-6">
@@ -29,7 +31,9 @@
         <div class="col-md-3 col-6">
             <div class="card shadow-sm border-0 rounded-3 p-3 text-center">
                 <h6 class="text-muted">Clientes</h6>
-                <h3 class="fw-bold">0</h3>
+                <a style="text-decoration: none; color: black;" href="clients/list">
+                    <h3 class="fw-bold">{{ $clientsCount }}</h3>
+                </a>
             </div>
         </div>
         <div class="col-md-3 col-6">
@@ -62,9 +66,6 @@
                         <p class="card-text text-success fw-bold text-center mb-2">
                             R$ {{ number_format($product->price, 2, ',', '.') }}
                         </p>
-                        <div class="mt-auto text-center">
-                            <a href="{{ route('products.show', $product->id) }}" class="btn btn-outline-primary btn-sm">Detalhes</a>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -58,7 +58,7 @@
                         <p><strong>Preço:</strong> R$ {{ number_format($product->price, 2, ',', '.') }}</p>
                         <p><strong>Categoria:</strong> {{ $product->category->name ?? 'Sem categoria' }}</p>
                         <p><strong>Estoque:</strong> {{ $product->stock_quantity }}</p>
-                        <p><strong>Descrição:</strong> {{ $product->description ?? 'Sem descrição' }}</p>
+                        <p><strong>Observação:</strong> {{ $product->observation ?? 'Sem descrição' }}</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>

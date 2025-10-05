@@ -31,7 +31,6 @@
                         <p><strong>Email:</strong> {{ $supplier->email ?? 'Não informado' }}</p>
                         <p><strong>Telefone:</strong> {{ $supplier->phone ?? 'Não informado' }}</p>
                         <p><strong>Endereço:</strong> {{ $supplier->address ?? 'Não informado' }}</p>
-                        <p><strong>Descrição:</strong> {{ $supplier->description ?? 'Sem descrição' }}</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
