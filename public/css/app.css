@@ -6,6 +6,11 @@
     --text-light: #fff;
 }
 
+/* Genericos */
+.pointer:hover {
+    cursor: pointer;
+}
+
 /* Layout */
 html,
 body {
