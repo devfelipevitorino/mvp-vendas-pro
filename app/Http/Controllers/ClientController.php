@@ -23,6 +23,15 @@ class ClientController extends Controller
 
         $client->name = $request->name;
         $client->user_id = $user->id;
+        $client->document = $request->document;
+        $client->email = $request->email;
+        $client->phone = $request->phone;
+        $client->address = $request->address;
+        $client->number_address = $request->number;
+        $client->neighborhood = $request->neighborhood;
+        $client->city = $request->city;
+        $client->uf = $request->uf;
+        $client->cep = $request->cep;
         $client->save();
 
         return redirect('/dashboard');
