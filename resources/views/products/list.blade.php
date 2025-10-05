@@ -8,7 +8,7 @@
 
     <div class="list-group">
         @forelse($products as $product)
-        <div class="list-group-item d-flex justify-content-between align-items-center">
+        <div class="list-group-item d-flex justify-content-between align-items-center border-bottom border-3">
             <div class="d-flex align-items-center gap-3">
                 {{-- Imagem do produto --}}
                 @if($product->image)

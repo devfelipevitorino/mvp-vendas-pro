@@ -8,7 +8,7 @@
 
     <div class="list-group">
         @forelse($clients as $client)
-        <div class="list-group-item d-flex justify-content-between align-items-center">
+        <div class="list-group-item d-flex justify-content-between align-items-center border-bottom border-3">
             <div>
                 <h5 class="mb-1">{{ $client->name }}</h5>
             </div>
