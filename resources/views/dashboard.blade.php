@@ -67,6 +67,11 @@
                             R$ {{ number_format($product->price, 2, ',', '.') }}
                         </p>
                     </div>
+                    <div class="modal-footer border-0 d-flex justify-content-center px-4 pb-3">
+                        <a href="/product/{{ $product->id }}" class="btn btn-outline-primary px-4">
+                            <i class="bi bi-pencil-square me-1"></i> Editar Produto
+                        </a>
+                    </div>
                 </div>
             </div>
             @endforeach
