@@ -16,7 +16,7 @@ class UserController extends Controller
         return view('dashboard', [
             'user' => $user,
             'products' => $products,
-            'clientsCount' => $clientsCount
+            'clientsCount' => $clientsCount,
         ]);
     }
 }
