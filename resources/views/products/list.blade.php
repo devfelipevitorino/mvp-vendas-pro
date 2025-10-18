@@ -33,36 +33,58 @@
             </div>
         </div>
 
+
+        <!-- MODAL -->
         <!-- MODAL -->
         <div class="modal fade" id="Modal{{ $product->id }}" tabindex="-1" aria-labelledby="ModalLabel{{ $product->id }}" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="ModalLabel{{ $product->id }}">Detalhes do Produto</h1>
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content border-0 shadow-lg rounded-4">
+
+                    <div class="modal-header bg-light border-0">
+                        <h1 class="modal-title fs-5 fw-semibold text-red-primary" id="ModalLabel{{ $product->id }}">
+                            Detalhes do Produto
+                        </h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                     </div>
-                    <div class="modal-body">
-                        <div class="text-center mb-3">
+
+                    <div class="modal-body px-4 py-3">
+                        <div class="text-center mb-4">
                             @if($product->image)
                             <img src="{{ asset('image/products/' . $product->image) }}"
                                 alt="{{ $product->name }}"
-                                class="img-fluid rounded" style="max-height: 200px; object-fit: cover;">
+                                class="img-fluid rounded-3 border"
+                                style="max-height: 200px; object-fit: cover;">
                             @else
                             <img src="{{ asset('image/products/placeholder.svg') }}"
                                 alt="Sem imagem"
-                                class="img-fluid rounded" style="max-height: 200px; object-fit: cover;">
+                                class="img-fluid rounded-3 border"
+                                style="max-height: 200px; object-fit: cover;">
                             @endif
                         </div>
-                        <p><strong>Código:</strong> {{ $product->id }}</p>
-                        <p><strong>Nome:</strong> {{ $product->name }}</p>
-                        <p><strong>Preço:</strong> R$ {{ number_format($product->price, 2, ',', '.') }}</p>
-                        <p><strong>Categoria:</strong> {{ $product->category->name ?? 'Sem categoria' }}</p>
-                        <p><strong>Estoque:</strong> {{ $product->stock_quantity }}</p>
-                        <p><strong>Observação:</strong> {{ $product->observation ?? 'Sem descrição' }}</p>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-2">
+                                <p class="mb-1"><strong>Código:</strong> {{ $product->id }}</p>
+                                <p class="mb-1"><strong>Nome:</strong> {{ $product->name }}</p>
+                                <p class="mb-1"><strong>Preço:</strong> R$ {{ number_format($product->price, 2, ',', '.') }}</p>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <p class="mb-1"><strong>Categoria:</strong> {{ $product->category->name ?? 'Sem categoria' }}</p>
+                                <p class="mb-1"><strong>Estoque:</strong> {{ $product->stock_quantity }}</p>
+                                <p class="mb-1"><strong>Observação:</strong> {{ $product->observation ?? 'Sem descrição' }}</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+
+                    <div class="modal-footer border-0 d-flex justify-content-between px-4 pb-3">
+                        <a href="/product/{{ $product->id }}" class="btn btn-outline-primary px-4">
+                            <i class="bi bi-pencil-square me-1"></i> Editar Produto
+                        </a>
+                        <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">
+                            Fechar
+                        </button>
                     </div>
+
                 </div>
             </div>
         </div>
