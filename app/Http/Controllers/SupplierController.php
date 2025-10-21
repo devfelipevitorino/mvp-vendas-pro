@@ -45,4 +45,37 @@ class SupplierController extends Controller
 
         return view('supplier.list', compact('suppliers'));
     }
+
+    public function edit($id)
+    {
+        $user = auth()->user();
+
+        $supplier = Supplier::findOrFail($id);
+
+        if ($user->id != $supplier->user_id) {
+            return redirect('/dashboard');
+        }
+
+        return view('supplier.edit', ['supplier' => $supplier]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $supplier = Supplier::findOrFail($id);
+
+        $supplier->cnpj = $request->cnpj;
+        $supplier->name = $request->name;
+        $supplier->email = $request->email;
+        $supplier->phone = $request->phone;
+        $supplier->address = $request->address;
+        $supplier->number_address = $request->number;
+        $supplier->neighborhood = $request->neighborhood;
+        $supplier->city = $request->city;
+        $supplier->uf = $request->uf;
+        $supplier->cep = $request->cep;
+
+        $supplier->save();
+
+        return redirect('/suppliers/list');
+    }
 }
