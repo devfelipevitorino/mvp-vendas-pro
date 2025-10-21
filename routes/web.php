@@ -24,6 +24,8 @@ Route::get('/category/list', [CategoryController::class, 'list'])->middleware('a
 Route::post('/suppliers', [SupplierController::class, 'store'])->middleware('auth');
 Route::get('/suppliers/create', [SupplierController::class, 'create'])->middleware('auth');
 Route::get('/suppliers/list', [SupplierController::class, 'list'])->middleware('auth');
+Route::get('/supplier/{id}', [SupplierController::class, 'edit'])->middleware('auth');
+Route::put('/supplier/{id}', [SupplierController::class, 'update'])->middleware('auth');
 
 Route::post('clients', [ClientController::class, 'store'])->middleware('auth');
 Route::get('clients/create', [ClientController::class, 'create'])->middleware('auth');
