@@ -36,4 +36,28 @@ class CategoryController extends Controller
 
         return view('category.list', compact('categories'));
     }
+
+    public function edit($id)
+    {
+        $user = auth()->user();
+
+        $category = Category::findOrFail($id);
+
+        if ($user->id != $category->user_id) {
+            return redirect('/dashboard');
+        }
+
+        return view('category.edit', ['category' => $category]);
+    }
+
+    public function update($id, Request $request)
+    {
+        $category = Category::findOrFail($id);
+
+        $category->name = $request->name;
+
+        $category->save();
+
+        return redirect('/category/list');
+    }
 }
