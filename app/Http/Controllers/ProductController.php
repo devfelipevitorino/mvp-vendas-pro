@@ -5,9 +5,18 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Repositories\ProductRepository;
 
 class ProductController extends Controller
 {
+
+    private $repository;
+
+    public function __construct(ProductRepository $repository)
+    {
+        $this->repository = $repository;
+    }
+
     public function welcome()
     {
         $user = auth()->user();
@@ -19,8 +28,6 @@ class ProductController extends Controller
         } else {
             $products = Product::all();
         }
-
-
 
         return view('welcome', ['products' => $products, 'search' => $search, 'user' => $user]);
     }
@@ -78,7 +85,8 @@ class ProductController extends Controller
     public function list()
     {
         $user = auth()->user();
-        $products = Product::where('user_id', $user->id)->get();
+
+        $products = $this->repository->getAll($user);
 
         return view('products.list', compact('products'));
     }
