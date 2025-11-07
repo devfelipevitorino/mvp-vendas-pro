@@ -20,6 +20,8 @@ Route::put('/product/{id}', [ProductController::class, 'update'])->middleware('a
 Route::post('/category', [CategoryController::class, 'store'])->middleware('auth');
 Route::get('/category/create', [CategoryController::class, 'create'])->middleware('auth');
 Route::get('/category/list', [CategoryController::class, 'list'])->middleware('auth');
+Route::get('/category/{id}', [CategoryController::class, 'edit'])->middleware('auth');
+Route::put('/category/{id}', [CategoryController::class, 'update'])->middleware('auth');
 
 Route::post('/suppliers', [SupplierController::class, 'store'])->middleware('auth');
 Route::get('/suppliers/create', [SupplierController::class, 'create'])->middleware('auth');
@@ -30,3 +32,5 @@ Route::put('/supplier/{id}', [SupplierController::class, 'update'])->middleware(
 Route::post('clients', [ClientController::class, 'store'])->middleware('auth');
 Route::get('clients/create', [ClientController::class, 'create'])->middleware('auth');
 Route::get('clients/list', [ClientController::class, 'list'])->middleware('auth');
+Route::get('clients/{id}', [ClientController::class, 'edit'])->middleware('auth');
+Route::put('clients/{id}', [ClientController::class, 'update'])->middleware('auth');
